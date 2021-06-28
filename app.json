@@ -1,0 +1,12 @@
+{
+  "name": "foton-books",
+  "displayName": "foton-books",
+  "expo": {
+    "name": "foton-books",
+    "slug": "foton-books",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
