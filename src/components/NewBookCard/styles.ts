@@ -37,7 +37,7 @@ export const ReadNow = styled.View`
   align-items: center;
 `;
 export const Icon = styled.Image`
-  width:${RFValue(16)}px;
+  width:${RFValue(18)}px;
   margin-right: 2px;
 `;
 export const ReadValue = styled.Text`
@@ -54,7 +54,7 @@ export const ReadValueNumber = styled.Text`
     font-size: ${RFValue(13)}px;
 `;
 export const BookThumbnail = styled.Image`
-  width: ${RFValue(75)}px;
-  height: ${RFValue(111)}px;
+  width: ${RFValue(80)}px;
+  height: ${RFValue(115)}px;
   border-radius: 7px;
 `;
