@@ -11,10 +11,10 @@
     "@expo-google-fonts/poppins": "^0.1.0",
     "axios": "^0.21.1",
     "axios-hooks": "^2.6.3",
-    "dotenv": "^10.0.0",
     "expo": "~41.0.1",
     "expo-app-loading": "^1.0.3",
     "expo-splash-screen": "~0.10.2",
+    "expo-standard-web-crypto": "^1.0.2",
     "expo-status-bar": "~1.0.4",
     "expo-updates": "~0.5.4",
     "react": "16.13.1",
@@ -27,8 +27,7 @@
     "react-native-screens": "~3.0.0",
     "react-native-unimodules": "~0.13.3",
     "react-native-web": "~0.13.12",
-    "styled-components": "^5.3.0",
-    "uuid": "^8.3.2"
+    "styled-components": "^5.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
