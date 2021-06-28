@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 
 import {
   useFonts,
+  Poppins_400Regular_Italic,
   Poppins_400Regular,
   Poppins_500Medium,
   Poppins_900Black,
@@ -16,6 +17,7 @@ import theme from "./src/global/styles/theme";
 import { Home } from "./src/screens/Home";
 export default function App() {
   const [fontsLoaded] = useFonts({
+    Poppins_400Regular_Italic,
     Poppins_400Regular,
     Poppins_500Medium,
     Poppins_700Bold,
