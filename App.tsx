@@ -3,6 +3,8 @@ import { Text } from'react-native'
 import React from 'react';
 import AppLoading from 'expo-app-loading';
 
+import { ThemeProvider } from 'styled-components'
+
 import { 
   useFonts ,
   Poppins_400Regular,
@@ -10,6 +12,7 @@ import {
   Poppins_900Black,
   Poppins_700Bold
 } from '@expo-google-fonts/poppins';
+import theme from './src/global/styles/theme';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -25,10 +28,10 @@ export default function App() {
   
 
   return (
-      <>
+      <ThemeProvider theme={theme}>
       <Text>OFonton</Text>
       <StatusBar style="auto" />
-      </>
+      </ThemeProvider>
   );
 }
 
