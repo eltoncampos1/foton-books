@@ -1,5 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text } from'react-native'
 import React from 'react';
 import AppLoading from 'expo-app-loading';
 
