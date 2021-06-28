@@ -9,9 +9,11 @@ export default {
         selected_icon_color: '#000000',
         small_text: '#313131',
         book_title: '#36383A',
-        link: '#4ABDF1'
+        link: '#4ABDF1',
+        card_text:'#E7E7E1'
     },
     fonts: {
+        regular_italic: 'Poppins_400Regular_Italic',
         regular: 'Poppins_400Regular',
         medium: 'Poppins_500Medium',
         bold: 'Poppins_700Bold',
