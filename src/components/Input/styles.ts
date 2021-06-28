@@ -4,7 +4,7 @@ import styled from 'styled-components/native';
 import { RFValue } from 'react-native-responsive-fontsize'
 
 export const Container = styled.View`
-    width: ${RFValue(336)}px;
+    width: ${RFValue(326)}px;
     height: ${RFValue(48)}px;
     border-radius: 10px;
     background-color: ${({ theme }) => theme.colors.input_bg};

@@ -7,6 +7,7 @@ import searchIcon from "../../assets/seachicon.png";
 
 export function Input() {
   const [value, setValue] = useState("");
+
   return (
     <S.Container>
       <S.SearchIcon source={searchIcon} />
