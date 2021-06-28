@@ -2,6 +2,7 @@ export default {
     colors: {
         background: '#F2F2F2',
         input_text: '#54565A',
+        input_bg: '#FDFCFC',
         primary_text: '#3F4043',
         secondary_text: '#FF6978',
         icon_color: '#BFBEBF',
