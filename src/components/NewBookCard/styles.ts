@@ -6,7 +6,7 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
   margin-right: ${RFValue(10)}px;
   width: ${RFValue(272)}px;
-  height: ${RFPercentage(25)}px;
+  height: ${RFPercentage(23)}px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -27,7 +27,7 @@ export const BookTitle = styled.Text`
 `;
 export const BookAuthor = styled.Text`
   color: ${({ theme }) => theme.colors.card_text};
-  font-family: ${({ theme }) => theme.fonts.book_title};
+  font-family: ${({ theme }) => theme.fonts.regular_italic};
 
   font-size: ${RFValue(13)}px;
   margin-bottom: ${RFValue(25)}px;
