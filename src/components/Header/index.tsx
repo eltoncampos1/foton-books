@@ -5,6 +5,8 @@ import { NewBookCard } from "../NewBookCard";
 
 import * as S from "./styles";
 import { colorArray } from "../../utils/color";
+import { DescriptionText } from "../DescriptonText";
+import { Input } from "../Input";
 
 interface VolumeInfoProps {
   title: string;
@@ -29,17 +31,17 @@ export function Header() {
 
   return (
     <S.Container>
+      <Input />
       <S.UserGreetings>
         <S.Greeting>Hi, </S.Greeting>
         <S.UserName>Elton Campos 👋</S.UserName>
       </S.UserGreetings>
 
       <S.NewBooks>
-        <S.NewBookText>
-          <S.NewBookTitle>Discover new book</S.NewBookTitle>
-          <S.NewBookMore>more</S.NewBookMore>
-        </S.NewBookText>
-
+        <DescriptionText
+          descriptionTitle="Discover new book"
+          descriptionLink="more"
+        />
         <S.NewBooksCards
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
