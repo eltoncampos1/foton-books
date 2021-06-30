@@ -10,7 +10,11 @@ export default {
         small_text: '#313131',
         book_title: '#36383A',
         link: '#4ABDF1',
-        card_text:'#E7E7E1'
+        card_text: '#E7E7E1',
+        current_book_title: "#2A2B26",
+        current_book_author: "#74776D",
+        current_chapter_color: '#2A2B26',
+        review_text: "#6A6767"
     },
     fonts: {
         regular_italic: 'Poppins_400Regular_Italic',
