@@ -15,6 +15,7 @@ import {
 import { PlayfairDisplay_700Bold } from "@expo-google-fonts/playfair-display";
 import theme from "./src/global/styles/theme";
 import { Home } from "./src/screens/Home";
+import { StatusBar } from "react-native";
 export default function App() {
   const [fontsLoaded] = useFonts({
     Poppins_400Regular_Italic,
@@ -31,6 +32,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <StatusBar barStyle="light-content" />
       <Home />
     </ThemeProvider>
   );
