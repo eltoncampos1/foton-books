@@ -1,14 +1,14 @@
 import React from "react";
+import { Content } from "../../components/Content";
 import { Header } from "../../components/Header";
-import { Input } from "../../components/Input";
 
 import * as S from "./styles";
 
 export function Home() {
   return (
-    <S.Container>
-      <Input />
+    <S.Container showsVerticalScrollIndicator={false}>
       <Header />
+      <Content />
     </S.Container>
   );
 }
