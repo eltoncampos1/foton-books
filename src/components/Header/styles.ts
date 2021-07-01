@@ -24,8 +24,19 @@ export const UserName = styled.Text`
 
 export const NewBooks = styled.View`
     margin-top: ${RFValue(31)}px;
+    position: relative;
 `;
 
 export const NewBooksCards = styled.ScrollView`
   flex-direction: row;
+`;
+export const Mask1 = styled.Image`
+ position: absolute;
+ left: 0;
+ bottom: 0;
+`;
+export const Mask2 = styled.Image`
+ position: absolute;
+ right: 0px;
+ top: 8px;
 `;

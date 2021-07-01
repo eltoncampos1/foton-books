@@ -6,6 +6,8 @@ export const DescriptionWrapper = styled.View`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+  padding-right:20px;
+
 `;
 
 export const DescriptionTitle = styled.Text`
