@@ -14,7 +14,7 @@ export default {
         current_book_title: "#2A2B26",
         current_book_author: "#74776D",
         current_chapter_color: '#2A2B26',
-        review_text: "#6A6767"
+        review_text: "#6A6767",
     },
     fonts: {
         regular_italic: 'Poppins_400Regular_Italic',
