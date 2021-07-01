@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Text } from "react-native";
 import * as Random from "expo-random";
-import api from "../../services/api";
+import { useFetch } from "../../hooks/useFetch";
 import { NewBookCard } from "../NewBookCard";
 
 import * as S from "./styles";
@@ -8,26 +9,11 @@ import { colorArray } from "../../utils/color";
 import { DescriptionText } from "../DescriptonText";
 import { Input } from "../Input";
 
-interface VolumeInfoProps {
-  title: string;
-  authors: Array<string>;
-  imageLinks: {
-    thumbnail: string;
-  };
-}
-
-interface BooksCardData {
-  volumeInfo: VolumeInfoProps;
-}
+import Mask1 from "../../assets/mask1.png";
+import Mask2 from "../../assets/mask2.png";
 
 export function Header() {
-  const [data, setData] = useState<BooksCardData[]>([]);
-
-  useEffect(() => {
-    api.get("/", { params: { q: "hooked" } }).then((response) => {
-      setData(response.data.items);
-    });
-  }, []);
+  const { data, loading, error } = useFetch("hooked");
 
   return (
     <S.Container>
@@ -38,15 +24,20 @@ export function Header() {
       </S.UserGreetings>
 
       <S.NewBooks>
+        <S.Mask1 source={Mask1} />
+        <S.Mask2 source={Mask2} />
+
         <DescriptionText
           descriptionTitle="Discover new book"
-          descriptionLink="more"
+          descriptionLink="More"
         />
         <S.NewBooksCards
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
           horizontal={true}
         >
+          {loading && <Text>loading...</Text>}
+          {error && <Text>An error occurred...</Text>}
           {data.map((book, i) => (
             <NewBookCard
               key={String(Random.getRandomBytes(1024))}
