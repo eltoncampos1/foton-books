@@ -1,54 +1,20 @@
 import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Feather } from "@expo/vector-icons";
 
-import { Home } from "../screens/Home";
-import { Libraries } from "../screens/Libraries";
-import { Profile } from "../screens/Profile";
-import { useTheme } from "styled-components";
-import { Platform } from "react-native";
-const { Navigator, Screen } = createBottomTabNavigator();
+import { createStackNavigator } from "@react-navigation/stack";
 
-export function AppRoutes() {
-  const theme = useTheme();
+import { Details } from "../screens/Details";
+import { Search } from "../screens/Search";
+
+import { HomeRoutes } from "./Home.routes";
+
+const Stack = createStackNavigator();
+
+export function StackRoute() {
   return (
-    <Navigator
-      tabBarOptions={{
-        activeTintColor: theme.colors.selected_icon_color,
-        inactiveTintColor: theme.colors.icon_color,
-        style: {
-          paddingVertical: Platform.OS === "ios" ? 10 : 0,
-          height: 59,
-        },
-      }}
-    >
-      <Screen
-        name="Home"
-        component={Home}
-        options={{
-          tabBarIcon: ({ size, color }) => (
-            <Feather name="home" size={size} color={color} />
-          ),
-        }}
-      />
-      <Screen
-        name="Libraries"
-        component={Libraries}
-        options={{
-          tabBarIcon: ({ size, color }) => (
-            <Feather name="book" size={size} color={color} />
-          ),
-        }}
-      />
-      <Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          tabBarIcon: ({ size, color }) => (
-            <Feather name="user" size={size} color={color} />
-          ),
-        }}
-      />
-    </Navigator>
+    <Stack.Navigator initialRouteName="Home">
+      <Stack.Screen name="Home" component={HomeRoutes} />
+      <Stack.Screen name="Search" component={Search} />
+      <Stack.Screen name="Details" component={Details} />
+    </Stack.Navigator>
   );
 }
