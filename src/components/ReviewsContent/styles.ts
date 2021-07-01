@@ -31,18 +31,21 @@ export const ReviewPublisher = styled.Text`
   font-size: ${RFValue(8)}px;
   color: ${({ theme }) => theme.colors.review_text};
   opacity: 0.8;
+  margin-right: 21px;
 `;
 export const ReviewViews = styled.Text`
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: ${RFValue(8)}px;
   color: ${({ theme }) => theme.colors.review_text};
   opacity: 0.8;
+  margin-right: 21px;
 `;
 export const ReviewPublishedDate = styled.Text`
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: ${RFValue(8)}px;
   color: ${({ theme }) => theme.colors.review_text};
   opacity: 0.8;
+  margin-bottom: 8px;
 `;
 export const Testimonial = styled.Text`
   font-family: ${({ theme }) => theme.fonts.regular};
