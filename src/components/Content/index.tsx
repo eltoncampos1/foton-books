@@ -1,39 +1,22 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
-import api from "../../services/api";
+import React from "react";
+import { useFetch } from "../../hooks/useFetch";
+import { Text } from "react-native";
 
 import { CurrentlyReading } from "../CurrentlyReading";
 import { DescriptionText } from "../DescriptonText";
 import { ReviewsContent } from "../ReviewsContent";
 import * as S from "./styles";
 
-interface VolumeInfoProps {
-  title: string;
-  authors: string;
-  imageLinks: {
-    thumbnail: string;
-  };
-}
-
 export function Content() {
-  const [currentlyReading, setCurrentReading] = useState<VolumeInfoProps>(
-    {} as VolumeInfoProps
-  );
+  const { data, error, loading } = useFetch("originals Adam Grant");
 
-  useEffect(() => {
-    api
-      .get("/", { params: { q: "originals Adam Grant" } })
-      .then((response) => {
-        // console.log(response.data.items[0].volumeInfo);
+  const currentlyReading = data[0].volumeInfo;
 
-        setCurrentReading(response.data.items[0].volumeInfo);
-      })
-      .catch((error) => {
-        return error.message;
-      });
-  }, []);
+  // console.log(data[0].volumeInfo.title);
 
-  // console.log(currentlyReading.imageLinks);
+  if (loading) {
+    return <Text>loading...</Text>;
+  }
 
   return (
     <S.Container>
@@ -41,11 +24,14 @@ export function Content() {
         descriptionTitle="Currently Reading"
         descriptionLink="All"
       />
-      {/* <CurrentlyReading
+
+      {error && <Text>An error occurred...</Text>}
+
+      <CurrentlyReading
         bookTitle={currentlyReading.title}
         bookAuthor={currentlyReading.authors}
         bookThumbnail={currentlyReading.imageLinks.thumbnail}
-      /> */}
+      />
 
       <DescriptionText
         descriptionTitle="Reviews of The Days"
