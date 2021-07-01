@@ -5,7 +5,7 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
   flex: 1;
   margin-top: 15px;
-  height: ${RFValue(400)}px;
+  height: ${RFValue(320)}px;
 `;
 export const ReviewImage = styled.Image`
      width: ${RFValue(325)}px;
