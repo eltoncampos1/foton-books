@@ -6,7 +6,7 @@ import { Details } from "../screens/Details";
 import { Search } from "../screens/Search";
 import { Home } from "../screens/Home";
 
-import { AppRoutes } from "./AppRoutes";
+import { AppRoutes } from "./tab.routes";
 import { Libraries } from "../screens/Libraries";
 import { Profile } from "../screens/Profile";
 
