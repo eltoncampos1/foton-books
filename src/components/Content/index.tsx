@@ -1,21 +1,24 @@
 import React from "react";
-import { useFetch } from "../../hooks/useFetch";
-import { Text } from "react-native";
+import { useFetchBookByName } from "../../hooks/useFetchBookByName";
+import { ActivityIndicator } from "react-native";
 
 import { CurrentlyReading } from "../CurrentlyReading";
 import { DescriptionText } from "../DescriptonText";
 import { ReviewsContent } from "../ReviewsContent";
 import * as S from "./styles";
+import { getBookData } from "../../utils/getBookData";
 
 export function Content() {
-  const { data, error, loading } = useFetch("originals Adam Grant");
+  const { data, loading } = useFetchBookByName("originals Adam Grant");
 
-  const currentlyReading = data[0].volumeInfo;
+  const currentlyReading = getBookData(data);
 
-  // console.log(data[0].volumeInfo.title);
+  if (!currentlyReading) {
+    return null;
+  }
 
   if (loading) {
-    return <Text>loading...</Text>;
+    return <ActivityIndicator size="large" />;
   }
 
   return (
@@ -24,8 +27,6 @@ export function Content() {
         descriptionTitle="Currently Reading"
         descriptionLink="All"
       />
-
-      {error && <Text>An error occurred...</Text>}
 
       <CurrentlyReading
         bookTitle={currentlyReading.title}
