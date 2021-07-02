@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Text } from "react-native";
+import React from "react";
+import { ActivityIndicator } from "react-native";
 import * as Random from "expo-random";
-import { useFetch } from "../../hooks/useFetch";
+import { useFetchBookByName } from "../../hooks/useFetchBookByName";
 import { NewBookCard } from "../NewBookCard";
 
 import * as S from "./styles";
@@ -13,7 +13,7 @@ import Mask1 from "../../assets/mask1.png";
 import Mask2 from "../../assets/mask2.png";
 
 export function Header() {
-  const { data, loading, error } = useFetch("hooked");
+  const { data, loading } = useFetchBookByName("hooked");
 
   return (
     <S.Container>
@@ -36,19 +36,20 @@ export function Header() {
           showsHorizontalScrollIndicator={false}
           horizontal={true}
         >
-          {loading && <Text>loading...</Text>}
-          {error && <Text>An error occurred...</Text>}
+          {loading && <ActivityIndicator size="small" />}
           {data.map((book, i) => (
             <NewBookCard
               key={String(Random.getRandomBytes(1024))}
               title={
                 String(book.volumeInfo.title).length > 12
-                  ? `${String(book.volumeInfo.title).slice(0, 20)}...`
+                  ? `${String(book.volumeInfo.title).slice(0, 19)}...`
                   : book.volumeInfo.title
               }
               authors={book.volumeInfo.authors}
               thumbnail={book.volumeInfo.imageLinks.thumbnail}
               backgroundColor={String(colorArray[i])}
+              subtitle={book.volumeInfo.subtitle}
+              description={book.volumeInfo.subtitle}
             ></NewBookCard>
           ))}
         </S.NewBooksCards>
