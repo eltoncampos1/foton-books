@@ -30,8 +30,10 @@ export function Content() {
 
       <CurrentlyReading
         bookTitle={currentlyReading.title}
-        bookAuthor={currentlyReading.authors}
+        bookAuthors={currentlyReading.authors}
         bookThumbnail={currentlyReading.imageLinks.thumbnail}
+        bookSubtitle={currentlyReading.subtitle}
+        bookDescription={currentlyReading.description}
       />
 
       <DescriptionText
