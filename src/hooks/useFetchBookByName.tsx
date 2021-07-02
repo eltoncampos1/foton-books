@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode } from "react";
+import React from "react";
 
 import { useEffect } from "react";
 
@@ -8,7 +8,7 @@ import { useState } from "react";
 interface VolumeInfoProps {
   title: string;
   authors: Array<string>;
-  imageLinks: {
+  imageLinks?: {
     thumbnail: string;
   };
   subtitle?: string;
