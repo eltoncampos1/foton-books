@@ -4,17 +4,20 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import { Details } from "../screens/Details";
 import { Search } from "../screens/Search";
+import { Home } from "../screens/Home";
 
-import { HomeRoutes } from "./Home.routes";
+import { AppRoutes } from "./AppRoutes";
+import { Libraries } from "../screens/Libraries";
+import { Profile } from "../screens/Profile";
 
 const Stack = createStackNavigator();
 
 export function StackRoute() {
   return (
-    <Stack.Navigator initialRouteName="Home">
+    <Stack.Navigator>
       <Stack.Screen
         name="Home"
-        component={HomeRoutes}
+        component={Home}
         options={{ headerShown: false }}
       />
       <Stack.Screen
@@ -25,6 +28,16 @@ export function StackRoute() {
       <Stack.Screen
         name="Details"
         component={Details}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Libraries"
+        component={Libraries}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Profile"
+        component={Profile}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
