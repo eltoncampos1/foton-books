@@ -12,9 +12,21 @@ const Stack = createStackNavigator();
 export function StackRoute() {
   return (
     <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Home" component={HomeRoutes} />
-      <Stack.Screen name="Search" component={Search} />
-      <Stack.Screen name="Details" component={Details} />
+      <Stack.Screen
+        name="Home"
+        component={HomeRoutes}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Search"
+        component={Search}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Details"
+        component={Details}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
   );
 }
