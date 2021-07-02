@@ -4,6 +4,7 @@ import styled from 'styled-components/native';
 export const Container = styled.ScrollView`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.background};
+  margin-bottom:  ${RFValue(10)}px;
 `;
 export const TopBackgroundImage = styled.ImageBackground`
   width: ${RFValue(376)}px;

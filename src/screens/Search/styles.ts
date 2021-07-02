@@ -6,7 +6,7 @@ export const Container = styled.ScrollView`
     flex: 1;
     padding-left:${RFValue(20)}px;
     padding-top: ${RFValue(50)}px;
-    padding-bottom: ${RFValue(50)}px;
+    margin-bottom: ${RFValue(5)}px;
 `;
 
 export const BookContainer = styled.View`
@@ -15,6 +15,7 @@ export const BookContainer = styled.View`
     flex-wrap: wrap;
 
     margin-top: ${RFValue(42)}px;
+    padding-bottom: ${RFValue(10)}px;
 `
 
 export const LoadMoreButton = styled(RectButton)`

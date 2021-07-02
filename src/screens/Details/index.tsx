@@ -12,6 +12,13 @@ export function Details({ route }: any) {
   const { bookName, bookSubtitle, bookAuthors, bookDescription, bookThumb } =
     route.params;
 
+  const placeholder =
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png";
+
+  if (!route.params.bookThumb) {
+    return placeholder;
+  }
+
   return (
     <S.Container>
       <S.TopBackgroundImage source={detailbg}>
@@ -19,7 +26,11 @@ export function Details({ route }: any) {
         <S.DetailMask1 source={detailmask1} />
         <S.DetailMask2 source={detailmask2} />
         <S.DetailMask3 source={detailmask3} />
-        <S.BookThumbnail source={{ uri: bookThumb }} />
+        {bookThumb ? (
+          <S.BookThumbnail source={{ uri: bookThumb }} />
+        ) : (
+          <S.BookThumbnail source={{ uri: placeholder }} />
+        )}
       </S.TopBackgroundImage>
 
       <S.TitleContainer>

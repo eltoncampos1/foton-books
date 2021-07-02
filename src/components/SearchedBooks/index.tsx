@@ -5,7 +5,7 @@ import { BorderlessButtonProps } from "react-native-gesture-handler";
 interface VolumeInfoProps extends BorderlessButtonProps {
   bookTitle: string;
   bookAuthors: any;
-  bookThumbnail: string;
+  bookThumbnail?: string;
   onPress: () => void;
 }
 
