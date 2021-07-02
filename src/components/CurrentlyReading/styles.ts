@@ -2,6 +2,7 @@ import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 
 import {ImageBackground} from 'react-native'
+import { BorderlessButton } from 'react-native-gesture-handler';
 
 export const Container = styled(ImageBackground)`
   width: ${RFValue(350)}px;
@@ -24,6 +25,9 @@ export const Book = styled.Image`
 export const BookDescription = styled.View`
   flex: 1;
   margin-left: 33%;
+`;
+export const BookWrapper = styled(BorderlessButton)`
+  
 `;
 export const BookTitle = styled.Text`
   font-family: ${({ theme }) => theme.fonts.book_title};
