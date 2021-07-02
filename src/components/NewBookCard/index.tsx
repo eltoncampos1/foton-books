@@ -13,6 +13,8 @@ interface VolumeInfoProps {
   authors: Array<string>;
   thumbnail: string;
   backgroundColor: string;
+  subtitle?: string;
+  description?: string;
 }
 
 export function NewBookCard({
@@ -20,11 +22,23 @@ export function NewBookCard({
   title,
   authors,
   backgroundColor,
+  subtitle,
+  description,
 }: VolumeInfoProps) {
   const navigation = useNavigation();
 
+  function handleBookClick() {
+    navigation.navigate("Details", {
+      bookName: title,
+      bookSubtitle: subtitle,
+      bookAuthors: authors,
+      bookDescription: description,
+      bookThumb: thumbnail,
+    });
+  }
+
   return (
-    <S.RedirectButton onPress={() => navigation.navigate("Libraries")}>
+    <S.RedirectButton onPress={handleBookClick}>
       <S.Container style={{ backgroundColor: backgroundColor }}>
         <S.Description>
           <S.BookTitle>{title}</S.BookTitle>
