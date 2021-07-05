@@ -104,7 +104,7 @@ For macOS users
    ```
 if you're using an Emulator run
 ```sh
- npm run andoid
+ npm run android
 ```
 or
 ```sh
