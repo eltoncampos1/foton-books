@@ -47,7 +47,7 @@
 ## About The Project
 
 
-Projeto mobile feito com expo, consiste em uma aplicação front-end em que nela foi usada a api do google-books para fazer a listagem dos livros.
+Mobile project made with expo, consists of a front-end application in which the google-books api was used to list the books.
 
 
 ### Built With
