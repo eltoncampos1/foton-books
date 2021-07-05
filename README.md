@@ -46,7 +46,6 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://user-images.githubusercontent.com/13947203/114559257-eb55ad00-9c41-11eb-9617-4e7627cc373e.png)
 
 Projeto mobile feito com expo, consiste em uma aplicação front-end em que nela foi usada a api do google-books para fazer a listagem dos livros.
 
